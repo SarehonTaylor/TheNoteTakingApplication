@@ -1,7 +1,11 @@
-const express = require)(express);
+const express = require('express');
 const path = require('path');
 
-const app = ex[ress ();]
+const app = express ();]
 const PORT = process.env.PORT || 3000;
 
-app.use(expressurl());
+app.use(expressurl({extended: true}));
+app,use(express.json());
+app.use(expres,static(path.join(__dirname, './public')))let
+
+require('./public/assets')
