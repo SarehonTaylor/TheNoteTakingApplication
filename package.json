@@ -1,0 +1,23 @@
+{
+  "name": "thenotetaker",
+  "version": "1.0.0",
+  "description": "This application lets you add & delete notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "NA",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarehonTaylor/TheNoteTakingApplication.git"
+  },
+  "keywords": [
+    "NoteTaker"
+  ],
+  "author": "SarehonTaylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SarehonTaylor/TheNoteTakingApplication/issues"
+  },
+  "homepage": "https://github.com/SarehonTaylor/TheNoteTakingApplication#readme"
+}
