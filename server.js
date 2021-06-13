@@ -1,15 +1,15 @@
 const express = require('express');
-const path = require('path');
+const apiroutes = require('./routes/apiroutes');
+const htmlroutes = require('./routes/htmlroutes');
 
 const app = express ();
 const PORT = process.env.PORT || 3000;
 
-app.use(expressurl({extended: true}));
-app,use(express.json());
-app.use(expres,static(path.join(__dirname, './public')))
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-require('./public/assets')(app);
+app.use(express.static('public'))
+app.use('/api', apiroutes)
+app.use('/', htmlroutes)
 
-app.listen(PORT, function() {
-    console.log(`The app is listing on port 3000`);
-});
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
