@@ -1,6 +1,7 @@
 const util = require('util')
 const fs = require('fs')
 const uuidv1 = require('uuid/v1')
+const { parse } = require('uuid')
 
 
 const readfileasync = util.promisify(fs.readFile)
@@ -16,6 +17,12 @@ return readfileasync('db/db.json','utf8')
     getnotes() {
         return this.read().then((notes) => {
             let parsedNotes;
+            try {
+                 parsedNotes = [].concat(JSON.parse(notes))
+            } catch (error) {
+                parsedNotes = []
+            }
+            return parsedNotes
     }
     addnote() {
         if
