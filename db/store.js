@@ -1,8 +1,6 @@
 const util = require('util')
 const fs = require('fs')
-const uuidv1 = require('uuid/v1')
-const { parse } = require('uuid')
-const { text } = require('express')
+const uuidv1 = require('uuidv1')
 
 
 const readfileasync = util.promisify(fs.readFile)
@@ -24,8 +22,10 @@ return readfileasync('db/db.json','utf8')
                 parsedNotes = []
             }
             return parsedNotes
+})
+
     }
-    addnote(note) {
+    addnote(notes) {
         const {title, text} = notes
         if(!title || !text){
             throw new Error("NOTE AND TITLE CAN'T BE BLANK")
@@ -39,7 +39,10 @@ return readfileasync('db/db.json','utf8')
 
     }
     deletenote(id) {
-        call return this. get notes
+        return this.getnotes()
+            .then((notes) =>notes.filter((note)=>note.id != id))
+            .then((filterednotes)=> this.write(filterednotes))
+        
     }
 }
 module.exports = new Store()
