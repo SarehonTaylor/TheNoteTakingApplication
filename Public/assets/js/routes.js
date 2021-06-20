@@ -28,7 +28,6 @@ module.exports = (app) => {
       let array = [];
       console.log('req.params.id');
       console.log(req.params.id);
-y
       console.log();
       db.forEach(i => {
         console.log('i.id:');
