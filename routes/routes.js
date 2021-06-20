@@ -23,12 +23,13 @@ module.exports = (app) => {
         // console.log('notes');
     });
 
-    // delete route
+    //Bonus delete route
     app.delete(`/api/notes/:id`, function(req, res) {
       let array = [];
       console.log('req.params.id');
       console.log(req.params.id);
-y
+
+      //Add non-deleted items to array
       console.log();
       db.forEach(i => {
         console.log('i.id:');
@@ -41,7 +42,7 @@ y
         }
       })
 
-      //Empties database
+      //Empties db
       while (db.length > 0) {
         db.shift();
       }
@@ -50,7 +51,7 @@ y
       console.log('empty db:')
       console.log(db);
 
-      //Add items from array back into database
+      //Add items from array back into db
       console.log();
       console.log('array:');
       array.forEach(i => {
