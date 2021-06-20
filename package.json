@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This application lets you add & delete notes",
   "main": "index.js",
+  "node": "12.11.1"
   "scripts": {
     "test": "NA",
     "start": "node server.js"
