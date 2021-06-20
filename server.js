@@ -24,6 +24,6 @@ require('./public/assets/js/routes')(app);
 
 // LISTENER
 // The below code effectively "starts" our server
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3000); {
   console.log(`App listening on PORT: http://127.0.0.1:${PORT}`);
-});
+};
